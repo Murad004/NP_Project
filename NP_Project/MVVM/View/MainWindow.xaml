@@ -18,12 +18,18 @@
                 <DataTemplate>
                     <Border BorderBrush="White" BorderThickness="5" CornerRadius="10" Height="200">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Name="UserNameTxtBlck" Width="200" VerticalAlignment="Center"></TextBlock>
+                            <TextBlock Text="{Binding Name}" Width="200" VerticalAlignment="Center"></TextBlock>
                             <Image Source="{Binding ImagePath}"  Width="150" Height="150"></Image>
                         </StackPanel>
                     </Border>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <Button Width="200"
+                Height="45"
+                Margin="0,400,0,0"
+                Content="Run Server"
+                FontSize="22"
+                Background="Blue"></Button>
     </Grid>
 </Window>
