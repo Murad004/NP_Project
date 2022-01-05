@@ -65,7 +65,10 @@
     </Compile>
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Helpers\EndPointHelper.cs" />
-    <Compile Include="Helpers\NetworkHelper.cs" />
+    <Compile Include="Models\Image.cs" />
+    <Compile Include="Models\PDF.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="MVVM\ViewModel\BaseViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
     <Compile Include="MVVM\View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

@@ -5,20 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NP_Project"
         mc:Ignorable="d"
-        Title="Server" Height="550" Width="600">
+        Title="Server" Height="550" Width="800">
     <Grid>
-        <ListBox Name="MyListBox">
-            <ListBox.Background>
-                <LinearGradientBrush>
-                    <GradientStop Offset="0" Color="Azure"></GradientStop>
-                    <GradientStop Offset="1.5" Color="Blue"></GradientStop>
-                </LinearGradientBrush>
-            </ListBox.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ListBox Background="WhiteSmoke" Name="MyPdfListBox" BorderThickness="0">
+            
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="White" BorderThickness="5" CornerRadius="10" Height="200">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="{Binding Name}" Width="200" VerticalAlignment="Center"></TextBlock>
+                            <TextBlock Text="{Binding Text}"  Width="150" Height="150"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox BorderThickness="0" Background="WhiteSmoke" Name="MyImageListBox" Grid.Column="1">
+            
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="White" BorderThickness="5" CornerRadius="10" Height="200">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Username}" Width="200" VerticalAlignment="Center" Foreground="Black"></TextBlock>
                             <Image Source="{Binding ImagePath}"  Width="150" Height="150"></Image>
                         </StackPanel>
                     </Border>
@@ -27,9 +39,19 @@
         </ListBox>
         <Button Width="200"
                 Height="45"
-                Margin="0,400,0,0"
+                Margin="-250,400,0,0"
                 Content="Run Server"
                 FontSize="22"
-                Background="Blue"></Button>
+                Background="Blue"
+                Grid.ColumnSpan="2"
+                Command="{Binding RunServerCommand}"></Button>
+        <Button Width="200"
+                Height="45"
+                Margin="240,400,0,0"
+                Content="Open"
+                FontSize="22"
+                Background="Blue"
+                Grid.ColumnSpan="2"
+                Command="{Binding OpenCommand}"></Button>
     </Grid>
 </Window>
